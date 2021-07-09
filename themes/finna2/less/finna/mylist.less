@@ -6,12 +6,6 @@
   }
 }
 
-.mylist-controls {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
 .main.template-dir-myresearch.template-name-mylist {
   .search-controls {
     margin-top: 10px;
@@ -583,48 +577,10 @@ span.caret {
     margin-left: 6px;
   }
 }
-.mylist-controls-bar {
-  display: inline-block;
-  width: 100%;
-  .mylist-controls {
-    float: right;
-    text-align: right;
-    @media (max-width: @screen-sm) {
-      width: 100%;
-      text-align: left;
-    }
-    @media (max-width: @screen-xxs-max) {
-      text-align: right;
-    }
-    .button-label {
-      margin-left: 5px;
-    }
-    a.btn.btn-primary {
-      display: inline-block;
-      margin-top: -1px;
-      margin-right: 1em;
-      @media (max-width: @screen-xxs-max) {
-        max-width: 60%;
-        display: block;
-        margin-bottom: 5px;
-      }
-    }
+.mylist-controls {
+  .control-container {
     .sort-option-container {
-      display: inline-block;
       @media (max-width: @screen-sm) {
-        text-align: left;
-        max-width: 50%;
-        .sort-button {
-          span {
-            display: inline-block;
-            max-width: 100%;
-            padding-right: 20px;
-            margin-bottom: -6px;
-          }
-        }
-        div, a {
-          width: 100%;
-        }
         a.dropdown-toggle {
           white-space: initial;
           i.fa-arrow-down {
@@ -635,35 +591,9 @@ span.caret {
           }
         }
       }
-      @media (max-width: @screen-xxs-max) {
-        float: left;
-        margin-right: 5px;
-      }
-    }
-    .limit-option-container {
-      display: inline-block;
-      @media (max-width: @screen-xxs-max) {
-        text-align: right;
-        float: left;
-        width: 20%;
-        div, a {
-          width: 100%;
-        }
-      }
     }
   }
-  .pagination-container {
-    display: inline-block;
-    padding: 8px;
-    padding-left: 6px;
-    .paginationSimple {
-      margin-left: 0px;
-      .pagination-text {
-        font-size: 14px;
-      }
-    }
-  }
-}
+}   
 .list-tag() {
   font-size: 0.9em;
   margin-right: 5px;
