@@ -1,0 +1,88 @@
+<!-- START of: finna - search/home/home-page.phtml -->
+<div class="left-column-content">
+  <div class="introduction">
+    <div>
+      <h2>Överskrift 1</h2>
+      <p>In libros De generatione et corruptione</p>
+      <p>In hoc igitur libro philosophus primo ponit prooemium, demonstrans suam intentionem: secundo prosequitur propositum...</p>
+    </div>
+    <div>
+      <div class="home-column">
+        <p>Kolumn 1</p>
+      </div>
+      <div class="home-column">
+        <p>Kolumn 2</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="right-column-content">
+  <div class="introduction document-types">
+    <div>
+      <h2><?=$this->transEsc("With the search you can find")?>...</h2>
+    </div>
+    <ul class="home-column">
+      <li><a class="iconlabel format-1journalarticle" href="Search/Results?type=AllFields&amp;filter%5B%5D=~format%3A%220%2FJournal%2F%22"><?=$this->transEsc("format_Journal_plural")?></a></li>
+      <li><a class="iconlabel format-1imageimage" href="Search/Results?lookfor=&amp;type=AllFields&amp;filter%5B%5D=~format%3A%220%2FImage%2F%22&amp;filter%5B%5D=online_boolean%3A1"><?=$this->transEsc("format_Image_plural")?></a></li>
+      <li><a class="iconlabel format-1physicalobjectother" href="Search/Results?type=AllFields&amp;filter%5B%5D=~format%3A%220%2FPhysicalObject%2F%22&amp;filter%5B%5D=online_boolean%3A1"><?=$this->transEsc("format_PhysicalObject_plural")?></a></li>
+      <li><a class="iconlabel format-1document" href="Search/Results?type=AllFields&amp;filter%5B%5D=~format%3A%220%2FDocument%2F%22"><?=$this->transEsc("format_Document_plural")?></a></li>
+      <li><a class="iconlabel format-1soundrecord" href="Search/Results?type=AllFields&amp;filter%5B0%5D=~format%3A%220%2FSound%2F%22"><?=$this->transEsc("format_Sound/SoundRecording_plural")?></a></li>
+      <li><a class="iconlabel format-1videovideo" href="Search/Results?type=AllFields&amp;filter%5B%5D=~format%3A%220%2FVideo%2F%22"><?=$this->transEsc("format_Video_plural")?></a></li>
+    </ul>
+    <ul class="home-column">
+      <li><a class="iconlabel format-1bookbook" href="Search/Results?type=AllFields&amp;filter%5B%5D=~format%3A%220%2FBook%2F%22"><?=$this->transEsc("format_Book/Book_plural")?></a></li>
+      <li><a class="iconlabel format-manuscript" href="Search/Results?type=AllFields&amp;filter%5B%5D=~format%3A%220%2FThesis%2F%22&amp;filter%5B%5D=online_boolean%3A1"><?=$this->transEsc("format_Thesis_plural")?></a></li>
+      <li><a class="iconlabel format-1journalarticle" href="Search/Results?type=AllFields&amp;view=grid&amp;filter%5B%5D=online_boolean%3A1&amp;filter%5B%5D=~format%3A%220%2FWorkOfArt%2F%22"><?=$this->transEsc("format_WorkOfArt_plural")?></a></li>
+      <li><a class="iconlabel format-1mapmap" href="Search/Results?type=AllFields&amp;filter%5B%5D=~format%3A%220%2FMap%2F%22"><?=$this->transEsc("format_Map_plural")?></a></li>
+      <li><a class="iconlabel format-0note" href="Search/Results?type=AllFields&amp;filter%5B%5D=~format%3A%220%2FMusicalScore%2F%22"><?=$this->transEsc("format_MusicalScore_plural")?></a></li>
+      <li><a class="iconlabel format-1placeplace" href="Search/Results?type=AllFields&amp;limit=50&amp;filter%5B%5D=~format%3A%220%2FPlace%2F%22&amp;filter%5B%5D=online_boolean%3A%221%22"><?=$this->transEsc("format_Place_plural")?></a></li>
+    </ul>
+  </div>
+</div>
+<div>
+  <div class="info-col">
+    <div class="infobox">
+    <h2>TODO Kokeile ulkomaisten tieteellisten aineistojen hakua</h2>
+    <p>TODO Tee sinua kiinnostava haku, ja valitse haun jälkeen ulkomaisten aineistojen välilehti.<p>
+    <p>TODO <small>Ulkomaiset aineistot sisältävät mm. vertaisarvioituja kokotekstejä sekä verkossa saatavilla olevia aineistoja.</small></p>
+    <p><a class="btn btn-primary" role="button" href="<?=$this->url('primo-search');?>?lookfor=Work%20intensification&amp;type=AllFields&amp;filter%5B%5D=tlevel%3A%22online_resources%22"><i class="fa fa-search"></i> Esimerkkihaku</a>
+    </div>
+  </div>
+  <div class="info-col">
+    <div class="infobox">
+      <h2>TODO Uusi lainat </h2>
+      <p><a class="btn btn-primary" role="button" href="<?=$this->url('myresearch-checkedout')?>" title="Kirjaudu sisään"><i class="fa fa-sign-in"></i> Kirjaudu sisään </a> kirjastokortilla tai Haka-tunnuksillasi.</p>
+      <p>Klikkaa uusi kaikki lainat -painiketta.</p>
+      <p>Kaikki uusittavissa olevat lainasi uusitaan.</p>
+    </div>
+  </div>
+
+  <div class="info-col">
+    <div class="infobox">
+      <h2>TODO Luokan infobox tyylit voi määritellä  variables.less -tiedostossa</h2>
+      <ul>
+        <li>@home-middle-background = koko alueen taustaväri</li>
+        <li>@infobox-background = laatikon taustaväri</li>
+        <li>@infobox-border = laatikon reunat</li>
+        <li>@infobox-text-color = laatikon tekstin oletusväri</li>
+        <li>@infobox-box-shadow = laatikon varjostus</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="clearfix"></div>
+<div><?= $this->feed("carousel"); ?></div>
+<div><?= $this->feed("carousel-small"); ?></div>
+<div>
+  <div class="home-column"><?= $this->feed("news"); ?></div>
+  <?=$this->render("Helpers/login-helper.phtml");?>
+  <div class="home-column"><?= $this->feed("carousel-vertical"); ?></div>
+</div>
+<div>
+  <h3><?=$this->transEsc('most_popular_searches_heading')?></h3>
+  <div class="piwik-popular-searches popular-search-col">
+    <span class="load-indicator hidden"><i class="fa fa-spinner fa-spin"></i> <?=$this->transEsc('Loading')?>...</span>
+    <span class="load-failed hidden"> <?=$this->transEsc('An error occurred during execution; please try again later.')?></span>
+  </div>
+</div>
+<!-- END of: finna - search/home/home-page.phtml -->
