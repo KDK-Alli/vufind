@@ -197,6 +197,32 @@ class Record extends \VuFind\View\Helper\Root\Record
     }
 
     /**
+     * Is repository library request form enabled for this record.
+     *
+     * @return boolean
+     */
+    public function repositoryLibraryRequestEnabled() : bool
+    {
+        if (!isset($this->config->Record->repository_library_request_sources)) {
+            return false;
+        }
+        return in_array(
+            $this->driver->getDataSource(),
+            $this->config->Record->repository_library_request_sources->toArray()
+        );
+    }
+
+    /**
+     * Get repository library request form id.
+     *
+     * @return string|null
+     */
+    public function getRepositoryLibraryRequestFormId()
+    {
+        return $this->config->Record->repository_library_request_form ?? null;
+    }
+
+    /**
      * Return record driver
      *
      * @return \VuFind\RecordDriver\AbstractBase

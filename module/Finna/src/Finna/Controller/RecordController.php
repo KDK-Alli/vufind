@@ -27,6 +27,7 @@
  */
 namespace Finna\Controller;
 
+use Finna\Form\Form;
 use VuFindSearch\ParamBag;
 
 /**
@@ -50,6 +51,38 @@ class RecordController extends \VuFind\Controller\RecordController
      */
     public function feedbackAction()
     {
+        return $this->getRecordForm(Form::RECORD_FEEDBACK_FORM);
+    }
+
+    /**
+     * Create repository library request form.
+     *
+     * @return \Laminas\View\Model\ViewModel
+     * @throws \Exception
+     */
+    public function repositoryLibraryRequestAction()
+    {
+        $driver = $this->loadRecord();
+        $recordPlugin = $this->getViewRenderer()->plugin('record')($driver);
+        if (!$recordPlugin->repositoryLibraryRequestEnabled()) {
+            throw new \Exception('Repository library request is not enabled');
+        }
+        if (!$formId = $recordPlugin->getRepositoryLibraryRequestFormId()) {
+            throw new \Exception('Repository library request form not configured');
+        }
+        return $this->getRecordForm($formId);
+    }
+
+    /**
+     * Helper for building a route to a record form
+     * (Feedback, Repository library request).
+     *
+     * @param string $id Form id
+     *
+     * @return \Laminas\View\Model\ViewModel
+     */
+    protected function getRecordForm($id)
+    {
         $driver = $this->loadRecord();
         $recordPlugin = $this->getViewRenderer()->plugin('record');
 
@@ -60,7 +93,7 @@ class RecordController extends \VuFind\Controller\RecordController
 
         return $this->redirect()->toRoute(
             'feedback-form',
-            ['id' => 'FeedbackRecord'],
+            ['id' => $id],
             ['query' => [
                 'data' => $data,
                 'layout' => $this->getRequest()->getQuery('layout', false),
